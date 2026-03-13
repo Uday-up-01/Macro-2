@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Train Movement Logs</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='logs.css') }}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">Railway Platform Simulator</div>
+
+<nav class="nav-links">
+<a href="/">Home</a>
+<a href="/search">Search Train</a>
+<a href="/logs">Train Logs</a>
+</nav>
+
+</header>
+
+
+<section class="logs-container">
+
+<h1 class="page-title">Train Movement Logs</h1>
+
+<p class="subtitle">Complete record of train arrivals, departures, platform allocation and queue events.</p>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Train No</th>
+<th>Arrival Time</th>
+<th>Departure Time</th>
+<th>Platform</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for log in logs %}
+
+<tr>
+
+<td>{{ log[0] }}</td>
+
+<td class="train-no"> {{ log[1] }}</td>
+
+<td>{{ log[2] if log[2] else "-" }}</td>
+
+<td>{{ log[3] if log[3] else "-" }}</td>
+
+<td>
+{% if log[4] %}
+Platform {{ log[4] }}
+{% else %}
+-
+{% endif %}
+</td>
+
+<td>
+
+{% if log[5] == "Arrived" %}
+<span class="status arrived">Arrived</span>
+
+{% elif log[5] == "Departed" %}
+<span class="status departed">Departed</span>
+
+{% elif log[5] == "Waiting" %}
+<span class="status waiting">Waiting</span>
+
+{% else %}
+<span class="status assigned">Assigned</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<a href="/" class="home-btn">Back to Dashboard</a>
+
+</section>
+
+</body>
+</html>

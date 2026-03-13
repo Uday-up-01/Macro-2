@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Train</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">Railway Platform Simulator</div>
+
+<nav class="nav-links">
+<a href="/">Home</a>
+<a href="/search">Search Train</a>
+<a href="/logs">Train Logs</a>
+</nav>
+
+</header>
+
+<section class="search-section">
+
+<div class="search-card">
+
+<h1>Train Status Search</h1>
+
+<form method="POST">
+
+<input 
+type="text" 
+name="train_no" 
+placeholder="Enter 5 Digit Train Number"
+maxlength="5"
+pattern="[0-9]{5}"
+required
+>
+
+<button type="submit" class="search-btn">
+Search Train
+</button>
+
+</form>
+
+{% if result %}
+
+<div class="result-box">
+
+<h3>Search Result</h3>
+
+<p>{{ result }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</section>
+
+</body>
+</html>

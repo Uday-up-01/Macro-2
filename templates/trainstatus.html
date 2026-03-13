@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Logs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Train Movement Logs</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Train No</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+        <th>Platform</th>
+        <th>Status</th>
+    </tr>
+
+    {% for row in logs %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>

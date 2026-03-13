@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Railway Platform Simulator</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='railway.css') }}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">Railway Platform Simulator</div>
+
+<nav class="nav-links">
+<a href="/">Home</a>
+<a href="/search">Search Train</a>
+<a href="/logs">Train Logs</a>
+</nav>
+
+</header>
+
+
+<section class="main-container">
+
+<h1 class="page-title">Railway Platform & Train Movement Simulation</h1>
+
+<p class="subtitle">Manage train arrivals, departures, platform allocation and queue system using FIFO scheduling.</p>
+
+
+<div class="control-panel">
+
+<div class="card">
+
+<h2>Train Arrival</h2>
+
+<form method="POST" action="/arrival">
+
+<input type="text" name="train_no" placeholder="Enter 5 Digit Train Number" maxlength="5" pattern="[0-9]{5}" required>
+
+<button type="submit" class="arrival-btn">Add Arrival</button>
+
+</form>
+
+</div>
+
+
+<div class="card">
+
+<h2>Train Departure</h2>
+
+<form method="POST" action="/departure">
+
+<input 
+type="text" 
+name="train_no" 
+placeholder="Enter Train Number"
+required
+>
+
+<button type="submit" class="departure-btn">Depart Train</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<h2 class="section-title">Platform Status</h2>
+
+<div class="platform-container">
+
+{% for train in platforms %}
+
+<div class="platform-box">
+
+<div class="platform-name">
+Platform {{ loop.index }}
+</div>
+
+<div class="platform-train">
+
+{% if train %}
+{{ train }}
+{% else %}
+<span class="empty">Available</span>
+{% endif %}
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+<h2 class="section-title">Waiting Queue (FIFO)</h2>
+
+<div class="queue-container">
+
+{% for train in queue %}
+
+<div class="queue-train">
+{{ train }}
+</div>
+
+{% else %}
+
+<p class="empty-text">No trains waiting</p>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+</body>
+</html>
