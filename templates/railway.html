@@ -20,12 +20,12 @@
 
 <nav class="nav-links">
 <a href="/">Home</a>
-<a href="/search">Search Train</a>
-<a href="/logs">Train Logs</a>
+<a href="/search">Search</a>
+<a href="/logs">Logs</a>
+<a href="/overview">System Overview</a>
 </nav>
 
 </header>
-
 
 <section class="main-container">
 
@@ -42,7 +42,14 @@
 
 <form method="POST" action="/arrival">
 
-<input type="text" name="train_no" placeholder="Enter 5 Digit Train Number" maxlength="5" pattern="[0-9]{5}" required>
+<input 
+type="text" 
+name="train_no" 
+placeholder="Enter 5 Digit Train Number"
+maxlength="5"
+pattern="[0-9]{5}"
+required
+>
 
 <button type="submit" class="arrival-btn">Add Arrival</button>
 
@@ -61,6 +68,8 @@
 type="text" 
 name="train_no" 
 placeholder="Enter Train Number"
+maxlength="5"
+pattern="[0-9]{5}"
 required
 >
 
@@ -71,7 +80,6 @@ required
 </div>
 
 </div>
-
 
 <h2 class="section-title">Platform Status</h2>
 
@@ -101,8 +109,7 @@ Platform {{ loop.index }}
 
 </div>
 
-
-<h2 class="section-title">Waiting Queue (FIFO)</h2>
+<h2 class="section-title">Waiting Queue</h2>
 
 <div class="queue-container">
 

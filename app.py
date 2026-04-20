@@ -176,6 +176,37 @@ def search():
 
     return render_template("search.html", result=result)
 
+@app.route("/overview")
+def overview():
+
+    conn = sqlite3.connect("railway.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM train_logs")
+    total_logs = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM train_logs WHERE status='Arrived'")
+    arrivals = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM train_logs WHERE status='Departed'")
+    departures = cursor.fetchone()[0]
+
+    conn.close()
+
+    occupied = sum(1 for p in platforms if p is not None)
+    available = TOTAL_PLATFORMS - occupied
+
+    return render_template(
+        "overview.html",
+        total_platforms=TOTAL_PLATFORMS,
+        occupied=occupied,
+        available=available,
+        queue_size=len(waiting_queue),
+        total_logs=total_logs,
+        arrivals=arrivals,
+        departures=departures
+    )
+
 
 if __name__ == "__main__":
     app.run(debug=True)

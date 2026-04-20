@@ -2,15 +2,15 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-color:white;
-min-height:100vh;
-display:flex;
-flex-direction:column;
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+color: white;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 }
 
 .navbar{
@@ -19,8 +19,7 @@ justify-content:space-between;
 align-items:center;
 padding:18px 60px;
 background:rgba(0,0,0,0.7);
-backdrop-filter:blur(8px);
-box-shadow:0 4px 12px rgba(0,0,0,0.5);
+box-shadow:0 4px 10px rgba(0,0,0,0.5);
 }
 
 .logo{
@@ -31,7 +30,7 @@ font-weight:bold;
 .nav-links a{
 color:white;
 text-decoration:none;
-margin-left:30px;
+margin-left:25px;
 font-size:16px;
 transition:0.3s;
 }
@@ -43,24 +42,23 @@ color:#00e5ff;
 .main-container{
 padding:40px 60px;
 flex:1;
+text-align:center;
 }
 
 .page-title{
-text-align:center;
-font-size:32px;
-margin-bottom:8px;
+font-size:34px;
+margin-bottom:10px;
 }
 
 .subtitle{
-text-align:center;
-color:#ddd;
-margin-bottom:35px;
+color:#ccc;
+margin-bottom:30px;
 }
 
 .control-panel{
 display:flex;
 justify-content:center;
-gap:40px;
+gap:30px;
 flex-wrap:wrap;
 margin-bottom:40px;
 }
@@ -69,9 +67,7 @@ margin-bottom:40px;
 background:rgba(255,255,255,0.08);
 padding:25px;
 border-radius:12px;
-width:280px;
-text-align:center;
-backdrop-filter:blur(10px);
+width:300px;
 box-shadow:0 8px 25px rgba(0,0,0,0.4);
 transition:0.3s;
 }
@@ -80,27 +76,32 @@ transition:0.3s;
 transform:translateY(-5px);
 }
 
-.card input{
+.card h2{
+margin-bottom:15px;
+}
+
+input{
 width:100%;
 padding:10px;
-margin-top:10px;
 border:none;
 border-radius:6px;
+margin-bottom:15px;
 outline:none;
-font-size:14px;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:15px;
+transition:0.3s;
 }
 
 .arrival-btn{
-margin-top:15px;
-width:100%;
-padding:10px;
 background:#00c853;
-border:none;
-border-radius:6px;
 color:white;
-font-size:15px;
-cursor:pointer;
-transition:0.3s;
 }
 
 .arrival-btn:hover{
@@ -108,16 +109,8 @@ background:#00e676;
 }
 
 .departure-btn{
-margin-top:15px;
-width:100%;
-padding:10px;
 background:#d50000;
-border:none;
-border-radius:6px;
 color:white;
-font-size:15px;
-cursor:pointer;
-transition:0.3s;
 }
 
 .departure-btn:hover{
@@ -125,27 +118,24 @@ background:#ff1744;
 }
 
 .section-title{
-margin-top:20px;
-margin-bottom:15px;
-text-align:center;
+margin:25px 0 15px;
 font-size:24px;
 }
 
 .platform-container{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:20px;
 flex-wrap:wrap;
-margin-bottom:30px;
 }
 
 .platform-box{
 background:rgba(255,255,255,0.08);
 padding:20px;
 border-radius:10px;
-width:160px;
+width:150px;
 text-align:center;
-box-shadow:0 6px 18px rgba(0,0,0,0.4);
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
@@ -159,7 +149,7 @@ margin-bottom:10px;
 }
 
 .platform-train{
-font-size:18px;
+font-size:16px;
 }
 
 .empty{
@@ -171,23 +161,17 @@ display:flex;
 justify-content:center;
 gap:15px;
 flex-wrap:wrap;
+margin-top:15px;
 }
 
 .queue-train{
-background:#1b1b1b;
-padding:10px 16px;
-border-radius:6px;
-box-shadow:0 3px 8px rgba(0,0,0,0.4);
+background:#ff9800;
+padding:10px 15px;
+border-radius:8px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 .empty-text{
-text-align:center;
-color:#bbb;
-}
-
-.footer{
-text-align:center;
-padding:15px;
-background:rgba(0,0,0,0.8);
-color:#aaa;
+color:#ccc;
 }

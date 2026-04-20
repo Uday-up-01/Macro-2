@@ -20,8 +20,9 @@
 
 <nav class="nav-links">
 <a href="/">Home</a>
-<a href="/search">Search Train</a>
-<a href="/logs">Train Logs</a>
+<a href="/search">Search</a>
+<a href="/logs">Logs</a>
+<a href="/overview">System Overview</a>
 </nav>
 
 </header>
@@ -39,7 +40,6 @@
 <table>
 
 <thead>
-
 <tr>
 <th>ID</th>
 <th>Train No</th>
@@ -48,7 +48,6 @@
 <th>Platform</th>
 <th>Status</th>
 </tr>
-
 </thead>
 
 <tbody>
@@ -59,7 +58,7 @@
 
 <td>{{ log[0] }}</td>
 
-<td class="train-no"> {{ log[1] }}</td>
+<td class="train-no">{{ log[1] }}</td>
 
 <td>{{ log[2] if log[2] else "-" }}</td>
 
@@ -86,7 +85,6 @@ Platform {{ log[4] }}
 
 {% else %}
 <span class="status assigned">Assigned</span>
-
 {% endif %}
 
 </td>

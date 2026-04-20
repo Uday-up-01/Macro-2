@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>System Overview</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='overview.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">Railway Platform Simulator</div>
+
+<nav class="nav-links">
+<a href="/">Home</a>
+<a href="/search">Search</a>
+<a href="/logs">Logs</a>
+<a href="/overview">System Overview</a>
+</nav>
+</header>
+
+
+<section class="dashboard">
+
+<h1>System Overview</h1>
+
+<div class="stats-container">
+
+<div class="card">
+<h2>Platforms</h2>
+<p>Total: {{ total_platforms }}</p>
+<p>Occupied: {{ occupied }}</p>
+<p>Available: {{ available }}</p>
+</div>
+
+<div class="card">
+<h2>Queue</h2>
+<p>Waiting Trains: {{ queue_size }}</p>
+</div>
+
+<div class="card">
+<h2>Train Stats</h2>
+<p>Total Logs: {{ total_logs }}</p>
+<p>Arrivals: {{ arrivals }}</p>
+<p>Departures: {{ departures }}</p>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

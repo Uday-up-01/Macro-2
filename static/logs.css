@@ -6,7 +6,7 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 color:white;
 min-height:100vh;
 display:flex;
@@ -30,8 +30,7 @@ font-weight:bold;
 .nav-links a{
 color:white;
 text-decoration:none;
-margin-left:30px;
-font-size:16px;
+margin-left:25px;
 transition:0.3s;
 }
 
@@ -41,18 +40,18 @@ color:#00e5ff;
 
 .logs-container{
 padding:40px 60px;
-flex:1;
 text-align:center;
+flex:1;
 }
 
 .page-title{
-font-size:32px;
-margin-bottom:8px;
+font-size:30px;
+margin-bottom:10px;
 }
 
 .subtitle{
-color:#ddd;
-margin-bottom:30px;
+color:#ccc;
+margin-bottom:25px;
 }
 
 .table-container{
@@ -68,20 +67,22 @@ overflow:hidden;
 box-shadow:0 8px 25px rgba(0,0,0,0.4);
 }
 
-th{
-background:#111;
+th, td{
 padding:12px;
-font-size:15px;
+text-align:center;
 }
 
-td{
-padding:12px;
-border-bottom:1px solid rgba(255,255,255,0.1);
-font-size:14px;
+th{
+background:rgba(0,0,0,0.6);
+font-weight:bold;
+}
+
+tr:nth-child(even){
+background:rgba(255,255,255,0.05);
 }
 
 tr:hover{
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.12);
 }
 
 .train-no{
@@ -90,7 +91,7 @@ font-weight:bold;
 
 .status{
 padding:5px 10px;
-border-radius:5px;
+border-radius:6px;
 font-size:13px;
 }
 
@@ -112,22 +113,15 @@ background:#2196f3;
 
 .home-btn{
 display:inline-block;
-margin-top:30px;
+margin-top:25px;
 padding:10px 20px;
-background:#00c853;
-color:white;
+background:#00e5ff;
+color:black;
 text-decoration:none;
 border-radius:6px;
 transition:0.3s;
 }
 
 .home-btn:hover{
-background:#00e676;
-}
-
-.footer{
-text-align:center;
-padding:15px;
-background:rgba(0,0,0,0.8);
-color:#aaa;
+background:#18ffff;
 }
